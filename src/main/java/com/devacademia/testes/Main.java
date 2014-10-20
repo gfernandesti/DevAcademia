@@ -14,14 +14,15 @@ import com.devacademia.model.Usuario;
  */
 public class Main {
     public static void main(String args[]){
+        
         Usuario usuario = new Usuario();
+        
         usuario.setId(1);
         usuario.setLogin("fatec");
         usuario.setSenha("pg");
         usuario.setPermissao('A');
-        System.out.println("passou1");
+        
         UsuarioDao usuarioDao = new UsuarioDao();
-        System.out.println("passou2");
         usuarioDao.adiciona(usuario);
         
         

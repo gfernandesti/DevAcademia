@@ -74,10 +74,10 @@ public class UsuarioDao {
                 // Criando o objeto contato
                 Usuario usuario = new Usuario();
                 //Seta no objeto contato o q "rs" pegou no banco
-                usuario.setId(rs.getInt("Usuario_id"));
-                usuario.setLogin(rs.getString("Usuario_login"));
-                usuario.setSenha(rs.getString("Usuario_senha"));
-                usuario.setPermissao(rs.getString("Usuario_permissao").charAt(0));
+                usuario.setId(rs.getInt("id"));
+                usuario.setLogin(rs.getString("login"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setPermissao(rs.getString("permissao").charAt(0));
 
                 // adicionando objeto a lista
                 listadeusuarios.add(usuario);
