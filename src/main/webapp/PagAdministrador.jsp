@@ -1,17 +1,21 @@
-<%-- 
-    Document   : AdministradorPag
-    Created on : 20/10/2014, 16:50:09
-    Author     : academia
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+    <%@ include file="Head.jsp" %>
+
     <body>
-        <h1>Ola Administrador!</h1>
+        <div class="container">
+            <div class="row clearfix">
+                <%@include file="CabecalhoAdministrador.jsp" %>
+                
+                <div id="paginasdecadastro">
+                    <h1>Pagina de Manutencao</h1>
+                </div>
+            </div>
+
+            <%@ include file="Rodape.jsp" %>
+            <%@ include file="ModalLogin.jsp" %>			
     </body>
 </html>
