@@ -18,7 +18,7 @@
                     <div class="btn-group pull-right">
                         <a class="btn btn-info dropdown-toggle" data-toggle="modal"
                            href="#LoginModal" style="margin-left: 150px">Bem Vindo, <%=session.getAttribute("userName")%></a>
-                        <form action="AdicionadoComSucesso.jsp" method="get"
+                        <form action="Home.jsp" method="get"
                               style="float: right">
                             <input type="hidden" name="logoff" />
                             <button class="btn btn-danger dropdown-toggle" type="submit" >Sair</button>

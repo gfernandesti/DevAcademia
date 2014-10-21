@@ -40,29 +40,16 @@
 	<script src="jquery-1.5.2.min.js" type="text/javascript"></script>
 	<script src="jquery.maskedinput-1.3.min.js" type="text/javascript"></script>
 	
-	<script type="text/javascript">
+        <script>
+            $(document).ready(function () {
+                var domContent = $("#paginasdecadastro");
 
-		function findCEP() {
-		    if($.trim($("#zipcode").val()) != ""){
-		        $("#ajax-loading").css('display','inline');
-		        $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#zipcode").val().replace("-", ""), function(){
-		            if(resultadoCEP["resultado"] == 1){
-		                $("#street").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
-		                $("#district").val(unescape(resultadoCEP["bairro"]));
-		                $("#city").val(unescape(resultadoCEP["cidade"]));
-		                $("#state").val(unescape(resultadoCEP["uf"]));
-		                $("#number").focus();
-		            }else{
-		                alert("Endereço não encontrado para o cep ");
-		            }
-		            $("#ajax-loading").hide();
-		        });
-		    }
-		}
-		$(document).ready(function(){
-		    $("#zipcode").mask("99999-999")
-		});
-
-	</script>
+                $("a").click(function () {
+                    domContent.load($(this).attr("href"));
+                    return false;
+                });
+            });
+        </script>
+        
 </head>
 </html>

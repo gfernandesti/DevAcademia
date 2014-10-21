@@ -38,17 +38,6 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-        <script>
-            $(document).ready(function () {
-                var domContent = $("#paginasdecadastro");
-
-                $("a").click(function () {
-                    domContent.load($(this).attr("href"));
-                    return false;
-                });
-            });
-        </script>
-
     </head>
 </head>
 </html>
