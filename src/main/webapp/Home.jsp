@@ -1,3 +1,4 @@
+<%@page import="com.devacademia.dao.AdministradorDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,23 +8,23 @@
     <%@ page import="com.devacademia.dao.UsuarioDao"%>
 
     <%
-        UsuarioDao dao = new UsuarioDao();
+        AdministradorDao dao = new AdministradorDao();
         String permissao;
         if (request.getParameter("login") != null) {
 
-            for (Usuario usuario : dao.getLista()) {
-                if (usuario.getLogin().equals(
-                        request.getParameter("Uemail"))
-                        && usuario.getSenha().equals(
+            for (Administrador adm : dao.getLista()) {
+                if (adm.getUsuario().getLogin().equals(
+                        request.getParameter("Ulogin"))
+                        && adm.getUsuario().getSenha().equals(
                                 request.getParameter("Usenha"))) {
-                    System.out.println(usuario.getLogin());
+                    System.out.println(adm.getUsuario().getLogin());
                     session.setAttribute("userName",
-                            request.getParameter("Uemail"));
+                            request.getParameter("Ulogin"));
                     session.setAttribute("userPass",
                             request.getParameter("Usenha"));
                     session.setAttribute("userPermissao",
-                            usuario.getPermissao());
-                    permissao = String.valueOf(usuario.getPermissao());
+                            adm.getUsuario().getPermissao());
+                    permissao = String.valueOf(adm.getUsuario().getPermissao());
                 }
             }
         } else if (request.getParameter("logoff") != null) {

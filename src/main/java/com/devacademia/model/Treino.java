@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.devacademia.controller;
+package com.devacademia.model;
 
 /**
  *
  * @author academia
  */
-public class UsuarioController {
+public class Treino {
     
 }

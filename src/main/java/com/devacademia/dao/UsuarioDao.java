@@ -36,7 +36,7 @@ public class UsuarioDao {
     public void adiciona(Usuario usuario) {
         // comando sql
         String sql = "insert into Usuario"
-                + "(login,senha,permissao)" + "values(?,?,?)";
+                + "(usu_login,usu_senha,usu_permissao)" + "values(?,?,?)";
 	
         // crio um objeto do tipo PreparedStatement para receber o comando sql
         // desejado
@@ -74,10 +74,10 @@ public class UsuarioDao {
                 // Criando o objeto contato
                 Usuario usuario = new Usuario();
                 //Seta no objeto contato o q "rs" pegou no banco
-                usuario.setId(rs.getInt("id"));
-                usuario.setLogin(rs.getString("login"));
-                usuario.setSenha(rs.getString("senha"));
-                usuario.setPermissao(rs.getString("permissao").charAt(0));
+                usuario.setId(rs.getInt("usu_id"));
+                usuario.setLogin(rs.getString("usu_login"));
+                usuario.setSenha(rs.getString("usu_senha"));
+                usuario.setPermissao(rs.getString("usu_permissao").charAt(0));
 
                 // adicionando objeto a lista
                 listadeusuarios.add(usuario);

@@ -26,16 +26,19 @@
                     </div>
 
                     <ul class="nav navbar-nav" style="margin-left: 0px">
-                        <li class="btn-info"><a
-                                data-toggle="modal" href="CadastrarAtendente.jsp">CadastrarAtendente</a></li>
+                         <li class="btn-warning"><a
+                                 data-toggle="modal" href="CRUDViewCadAdministrador.jsp">CadastrarAdministrador</a></li>
+                        <li class="btn-info" style="margin-left: 50px"><a
+                                data-toggle="modal" href="CRUDViewCadAtendente.jsp">CadastrarAtendente</a></li>
                         <li class="btn-success" style="margin-left: 50px"><a
-                                data-toggle="modal" href="CadastrarAluno.jsp">CadastrarAluno</a></li>
+                                data-toggle="modal" href="CRUDViewCadAluno.jsp">CadastrarAluno</a></li>
                         <li class="btn-warning" style="margin-left: 50px"><a
-                                href="CadastrarAparelho.jsp">CadastrarAparelho</a></li>
+                                href="CRUDViewCadAparelho.jsp">CadastrarAparelho</a></li>
                         <li class="btn-default" style="margin-left: 50px" ><a
-                                data-toggle="modal" href="CadastrarInstrutor.jsp">CadastrarInstrutor</a></li>
+                                data-toggle="modal" href="CRUDViewCadInstrutor.jsp">CadastrarInstrutor</a></li>
                     </ul>
                 </div>
         </div>
+                        <br><br>
     </body>
 </html>

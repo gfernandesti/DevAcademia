@@ -27,10 +27,10 @@
 
 							<!-- Text input-->
 							<div class="form-group">
-								<label class="col-md-4 control-label" for="Uemail"></label>
+								<label class="col-md-4 control-label" for="Ulogin"></label>
 								<div class="col-md-4">
-									<input id="Uemail" name="Uemail" type="text"
-										placeholder="Digite seu email.." class="form-control input-md"
+									<input id="Ulogin" name="Ulogin" type="text"
+										placeholder="Digite seu login.." class="form-control input-md"
 										required="">
 
 								</div>

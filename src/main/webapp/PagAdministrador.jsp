@@ -22,7 +22,7 @@
                 <%@include file="CabecalhoAdministrador.jsp" %>
                 
                 <div id="paginasdecadastro">
-                    <h1>Pagina de Manutencao</h1>
+                    <%@include file="CRUDViewCadAdministrador.jsp" %>
                 </div>
             </div>
 

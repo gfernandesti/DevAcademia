@@ -3,9 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ include file="Head.jsp" %>
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <!--  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDRlimL0AqioJwVq8vQDpOgniIq2OS1Mag&amp;sensor=false"></script>
-        <script type="text/javascript" src="mapa.js"></script>
+        <script type="text/javascript" src="mapa.js"></script>!-->
     
     <body background="img/Backgreen.jpg">
         <%@include file="Cabecalho.jsp" %>
