@@ -88,7 +88,7 @@ public class AparelhoDao {
         try {
            
             String sql = "update Aparelho set apa_codigo=?,apa_descricao=?,apa_notafiscal=?,apa_quantidade=?"
-                + "where apa_id=?;";
+                + "where apa_id=?";
             PreparedStatement stmt;
 
             stmt = conexao.prepareStatement(sql);
@@ -98,7 +98,7 @@ public class AparelhoDao {
             stmt.setString(2, apa.getDescricao());
             stmt.setString(3, apa.getNotafiscal());
             stmt.setInt(4, apa.getQuantidade());
-           
+            stmt.setInt(5, apa.getId());
             stmt.execute();
             stmt.close();
 

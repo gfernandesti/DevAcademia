@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    
+
     <body style="background-color: yellowgreen">
         <br><br><br><br>
 
@@ -26,8 +26,8 @@
                     </div>
 
                     <ul class="nav navbar-nav" style="margin-left: 0px">
-                         <li class="btn-warning"><a
-                                 data-toggle="modal" href="CRUDViewCadAdministrador.jsp">CadastrarAdministrador</a></li>
+                        <li class="btn-warning"><a
+                                data-toggle="modal" href="CRUDViewCadAdministrador.jsp">CadastrarAdministrador</a></li>
                         <li class="btn-info" style="margin-left: 50px"><a
                                 data-toggle="modal" href="CRUDViewCadAtendente.jsp">CadastrarAtendente</a></li>
                         <li class="btn-success" style="margin-left: 50px"><a
@@ -36,9 +36,11 @@
                                 href="CRUDViewCadAparelho.jsp">CadastrarAparelho</a></li>
                         <li class="btn-default" style="margin-left: 50px" ><a
                                 data-toggle="modal" href="CRUDViewCadInstrutor.jsp">CadastrarInstrutor</a></li>
+                        <li class="btn-info" style="margin-left: 50px" ><a
+                                data-toggle="modal" href="CRUDViewCadTreino.jsp">CadastrarTreino</a></li>
                     </ul>
                 </div>
         </div>
-                        <br><br>
+        <br><br>
     </body>
 </html>

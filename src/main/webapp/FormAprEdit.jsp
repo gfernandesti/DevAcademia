@@ -43,13 +43,13 @@
 
                 </div>
             </div>
-
+             <input type="hidden" name="tf_id" value="<%=request.getParameter("tf_id")%>">
 
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="bt_add"></label>
                 <div class="col-md-4">
-                    <button id="bt_add" name="acao" class="btn btn-primary" value="adicionar">Adicionar</button>
+                    <button id="bt_add" name="acao" class="btn btn-primary" value="alterar">Adicionar</button>
                      <a href="Home.jsp" id="bt_add" name="cancel" class="btn btn-primary"  >Cancelar</a>
                 </div>
             </div>

@@ -20,7 +20,7 @@
         <div class="form-group">
                 <label class="col-md-4 control-label" for="bt_cancel"></label>
                 <div class="col-md-4">
-                    <a href="FormInsCad.jsp" id="bt_add" name="cancel" class="btn btn-primary"  >Novo Instrutor!</a>
+                    <a href="FormInsCad.jsp" id="bt_add" name="cancel" class="btn btn-primary"  >Novo Instrutor</a>
                 </div>
             </div>
 <br /> <br />

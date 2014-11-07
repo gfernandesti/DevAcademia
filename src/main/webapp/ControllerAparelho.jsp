@@ -37,7 +37,6 @@
         
         int codigo = Integer.parseInt(request.getParameter("tf_codigo"));
         int quantidade = Integer.parseInt(request.getParameter("tf_quantidade"));
-        int idade = Integer.parseInt(request.getParameter("tf_idade"));
         String descricao = request.getParameter("tf_descricao");
         String nf = request.getParameter("tf_nf");
        
