@@ -5,8 +5,6 @@
 <html>
     <%@ include file="Head.jsp" %>
     <%@ page import="com.devacademia.model.*"%>
-    <%@ page import="com.devacademia.dao.UsuarioDao"%>
-
     <%
         AdministradorDao dao = new AdministradorDao();
         String permissao;

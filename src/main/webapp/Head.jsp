@@ -14,12 +14,6 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/teste.css" rel="stylesheet">
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-                  <script src="js/html5shiv.js"></script>
-                <![endif]-->
-
-        <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144"
               href="img/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114"
@@ -33,10 +27,15 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
-        <script src="angular.js"></script>
-        <script type="text/javascript" src="lightbox.js"></script>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	 <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">  
+        <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    
+	<script type="text/javascript" src="js/functions.js"></script>
+        
+        <script src="angular.js"></script>
 
     </head>
 </head>

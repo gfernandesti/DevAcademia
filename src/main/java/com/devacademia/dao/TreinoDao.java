@@ -9,10 +9,8 @@ import com.devacademia.model.Aluno;
 import com.devacademia.model.Aparelho;
 import com.devacademia.model.Instrutor;
 import com.devacademia.model.Treino;
-import com.devacademia.model.Usuario;
 import com.devacademia.util.FabricaDeConexoes;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,18 +37,15 @@ public class TreinoDao {
     public void adiciona(Treino tre) {
         // comando sql
         String sql = "insert into Treino"
-                + "(tre_descricao,tre_sequencia,tre_grupomuscular,tre_exercicio,Aluno_alu_id,"
-                + "Aparelho_apa_id,Instrutor_inst_id,tre_dia)" + "values(?,?,?,?,?,?,?,?)";
+                + "(Aluno_alu_id,"
+                + "Aparelho_apa_id,Instrutor_inst_id,tre_dia)" + "values(?,?,?,?)";
 
         PreparedStatement stmt;
         try {
             stmt = conexao.prepareStatement(sql);
 
             // método set exige como parameto(indice,atributo do objeto)
-            stmt.setString(1, tre.getDescricao());
-            stmt.setString(2, tre.getSequencia());
-            stmt.setString(3, tre.getGrupomuscular());
-            stmt.setString(4, tre.getExercicio());
+
             stmt.setInt(5, tre.getAluno().getId());
             stmt.setInt(6, tre.getAparelho().getId());
             stmt.setInt(7, tre.getInstrutor().getId());
@@ -81,10 +76,6 @@ public class TreinoDao {
                 Treino tre = new Treino();
                 //Seta no objeto contato o q "rs" pegou no banco
                 tre.setId(rs.getInt("tre_id"));
-                tre.setDescricao(rs.getString("tre_descricao"));
-                tre.setSequencia(rs.getString("tre_sequencia"));
-                tre.setGrupomuscular(rs.getString("tre_grupomuscular"));
-                tre.setExercicio(rs.getString("tre_exercicio"));
                 tre.setDia(rs.getString("tre_dia"));
                 
                 Aluno aluno = new Aluno();

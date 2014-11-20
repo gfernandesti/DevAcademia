@@ -17,6 +17,7 @@
 <html>
     <%@ include file="Head.jsp" %>
     <%@include file="CabecalhoAdministrador.jsp" %>
+
     <form class="form-horizontal" action="ControllerTreino.jsp">
         <fieldset>
 
@@ -24,62 +25,13 @@
             <legend>Cadastrar Treino!</legend>
 
             <!-- Text input-->
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="col-md-4 control-label" for="tf_descricao">Descrição</label>  
                 <div class="col-md-6">
                     <input id="tf_descricao" name="tf_descricao" type="text" placeholder="descrição.." class="form-control input-md" required="">
 
                 </div>
-            </div>
-
-            <!-- Multiple Radios (inline) -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="rd_sequencia">Sequência</label>
-                <div class="col-md-4"> 
-                    <label class="radio-inline" for="rd_sequencia-0">
-                        <input type="radio" name="rd_sequencia" id="rd_sequencia-0" value="5" checked="checked">
-                        5
-                    </label> 
-                    <label class="radio-inline" for="rd_sequencia-1">
-                        <input type="radio" name="rd_sequencia" id="rd_sequencia-1" value="10">
-                        10
-                    </label> 
-                    <label class="radio-inline" for="rd_sequencia-2">
-                        <input type="radio" name="rd_sequencia" id="rd_sequencia-2" value="15">
-                        15
-                    </label> 
-                    <label class="radio-inline" for="rd_sequencia-3">
-                        <input type="radio" name="rd_sequencia" id="rd_sequencia-3" value="20">
-                        20
-                    </label>
-                </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="sl_grupomuscular">GrupoMuscular</label>
-                <div class="col-md-5">
-                    <select id="sl_grupomuscular" name="sl_grupomuscular" class="form-control">
-                        <option value="Braço">Braço</option>
-                        <option value="Perna">Perna</option>
-                        <option value="Ombro">Ombro</option>
-                        <option value="Costas">Costas</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="sl_exercicio">Exercício</label>
-                <div class="col-md-5">
-                    <select id="sl_exercicio" name="sl_exercicio" class="form-control">
-                        <option value="Supino">Supino</option>
-                        <option value="Trapézio">Trapézio</option>
-                        <option value="Peck Deck">Peck Deck</option>
-                    </select>
-                </div>
-            </div>
-
+            </div>-->
             <!-- Select Basic -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="sl_aparelho">Aparelho</label>
@@ -146,29 +98,88 @@
                         <input type="radio" name="rb_dia" id="rb_dia-3" value="Quinta">
                         Quinta
                     </label>
+                    <label class="radio-inline" for="rb_dia-3">
+                        <input type="radio" name="rb_dia" id="rb_dia-3" value="Sexta">
+                        Sexta
+                    </label>
+                    <label class="radio-inline" for="rb_dia-3">
+                        <input type="radio" name="rb_dia" id="rb_dia-3" value="Sábado">
+                        Sabado
+                    </label>
+                    <label class="radio-inline" for="rb_dia-3">
+                        <input type="radio" name="rb_dia" id="rb_dia-3" value="Domingo">
+                        Domingo
+                    </label>
                 </div>
             </div>
 
-            <!-- Text input-->
-           <!-- <div class="form-group">
-                <label class="col-md-4 control-label" for="tf_horario">Horário</label>  
-                <div class="col-md-4">
-                    <input id="tf_horario" name="tf_horario" type="text" placeholder="horário.." class="form-control input-md">
+            <!-- Tabela Dinamica Cadastro Exercício-->
+            <h3 align="center">Grade de Exercícios</h3>
+            <hr />
+            <div class="table-responsive">
+                <table id="products-table" class="table table-hover table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Série</th>
+                            <th>Repetições</th>
+                            <th>GrupoMuscular</th>
+                            <th class="actions">Ações</th>
+                        </tr>
+                        <tr>
+                            <td><select id="sl_descricao" name="sl_descricao" class="form-control">
+                                    <option value="Perna Estendida">Perna Estendida</option>
+                                    <option value="Leg Press Inclinado">Leg Press Inclinado</option>
+                                    <option value="Supino Reto">Supino Reto</option>
+                                    <option value="Elevação Frontal">Elevação Frontal</option>
+                                    <option value="Crucifixo (ou Fly)">Crucifixo (ou Fly)</option>
+                                    <option value="Remada Unilateral">Remada Unilateral</option>
+                                    <option value="Triângulo e Polia Alta">Triângulo e Polia Alta</option>
+                                </select></td>
+                            <td> <select id="sl_serie" name="sl_serie" class="form-control">
+                                    <option value="5">1</option>
+                                    <option value="10">2</option>
+                                    <option value="15">3</option>
+                                    <option value="20">4</option>
+                                </select></td>
+                            <td><select id="sl_repeticao" name="sl_repeticao" class="form-control">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select></td>
+                            <td><select id="sl_grupomuscular" name="sl_grupomuscular" class="form-control">
+                                    <option value="Braço">Braço</option>
+                                    <option value="Perna">Perna</option>
+                                    <option value="Ombro">Ombro</option>
+                                    <option value="Costas">Costas</option>
+                                </select></td>
+                            <td class="actions">
+                                <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+                            </td>
+                        </tr>
 
-                </div>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align: left;">
+                                <button class="btn btn-large btn-success" onclick="AddTableRow(this)" type="button">Adicionar Exercício</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-           -->
+
 
 
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="bt_enviar"></label>
                 <div class="col-md-4">
-                    <button id="bt_add" name="acao" class="btn btn-primary" value="adicionar">Adicionar</button>
+                    <button id="bt_add" name="acao" class="btn btn-primary" value="adicionar">SalvarTreino</button>
                     <a href="Home.jsp" id="bt_add" name="cancel" class="btn btn-primary"  >Cancelar</a>
                 </div>
             </div>
 
         </fieldset>
     </form>
-

@@ -4,6 +4,8 @@
     Author     : academia
 --%>
 
+<%@page import="com.devacademia.dao.ExercicioDao"%>
+<%@page import="com.devacademia.model.Exercicio"%>
 <%@page import="com.devacademia.model.Instrutor"%>
 <%@page import="com.devacademia.model.Aparelho"%>
 <%@page import="com.devacademia.model.Aluno"%>
@@ -14,10 +16,6 @@
 <%
     if (request.getParameter("acao").equals("remover")) {
         int id = Integer.parseInt(request.getParameter("id"));
-        String login = request.getParameter("login");
-        String senha = request.getParameter("senha");
-        Character permissao = request.getParameter("permissao").charAt(0);
-        Usuario usuario = new Usuario();
         TreinoDao dao = new TreinoDao();
         Treino tre = new Treino();
         tre.setId(id);
@@ -26,17 +24,33 @@
                 .getRequestDispatcher("Home.jsp");//direciona p/pagina q contem a resposta html
         rd.forward(request, response);
     } else if (request.getParameter("acao").equals("adicionar")) {
-        String descricao=request.getParameter("tf_descricao");
-        String sequencia = request.getParameter("rd_sequencia");
-        String grupo = request.getParameter("sl_grupomuscular");
-        String exercicio = request.getParameter("sl_exercicio");
+        String descricoes[]=request.getParameterValues("sl_descricao");
+        String series[]=request.getParameterValues("sl_serie");
+        String repeticoes[] = request.getParameterValues("sl_repeticao");
+        String grupos [] = request.getParameterValues("sl_grupomuscular");
         int apa =Integer.parseInt(request.getParameter("sl_aparelho"));
         int alu =Integer.parseInt(request.getParameter("sl_aluno"));
         int ins =Integer.parseInt(request.getParameter("sl_instrutor"));
         String dia = request.getParameter("rb_dia");
-        //Date horario=request.getParameter("tf_horario");
+    
+       /*int [] descricoesint = new int[descricoes.length];
+        for(int i=0;i<=descricoes.length-1;i++){
+            descricoesint[i]=Integer.parseInt(descricoes[i]);
+        }
+        /*
+        for(int i=0;i<=series.length-1;i++){
+            out.println(series[i]);
+        }
+        for(int i=0;i<=grupos.length-1;i++){
+            out.println(grupos[i]);
+        }
+        for(int i=0;i<=repeticoes.length-1;i++){
+            out.println(repeticoes[i]);
+        }*/
         
-        Aluno aluno = new Aluno();
+    
+        
+       Aluno aluno = new Aluno();
         aluno.setId(alu);
         
         Aparelho aparelho = new Aparelho();
@@ -45,34 +59,62 @@
         Instrutor instrutor = new Instrutor();
         instrutor.setId(ins);
 
-        Treino tre = new Treino(sequencia, descricao, grupo, exercicio,aluno, aparelho, instrutor, dia);
+        Treino tre = new Treino();
+        tre.setDia(dia);
+        tre.setAluno(aluno);
+        tre.setAparelho(aparelho);
+        tre.setInstrutor(instrutor);
       
-        TreinoDao dao = new TreinoDao();
-        dao.adiciona(tre);
+        //TreinoDao dao = new TreinoDao();
+        //dao.adiciona(tre);
+        
+        Exercicio exe = new Exercicio();
+        exe.setDescricao(descricoes);
+        exe.setGrupomuscular(grupos);
+       // exe.setSerie(series);
+       // exe.setRepeticoes(repeticoes);
+        
+       /* for(int i=0;i<=descricoes.length-1;i++){
+            exe.setDescricao(descricoes[i]);
+             ExercicioDao dao = new ExercicioDao();
+             dao.adiciona(exe);
+        }*/
        
-        response.sendRedirect("Home.jsp");
+        
+       
+        
+       
+        //response.sendRedirect("Home.jsp");
     } else if (request.getParameter("acao").equals("alterar")) {
         
-        int id = Integer.parseInt(request.getParameter("tf_id"));
-        int registro = Integer.parseInt(request.getParameter("tf_registro"));
-        int idade = Integer.parseInt(request.getParameter("tf_idade"));
-        String email = request.getParameter("tf_email");
-        String tel = request.getParameter("tf_tel");
-        String nome = request.getParameter("tf_nome");
-        String login = request.getParameter("tf_login");
-        String senha = request.getParameter("tf_senha");
-        Character permissao = request.getParameter("tf_permissao").charAt(0);
+        String descricao=request.getParameter("tf_descricao");
+        String sequencia = request.getParameter("rd_sequencia");
+        String grupo = request.getParameter("sl_grupomuscular");
+        String exercicio = request.getParameter("sl_exercicio");
+        int apa =Integer.parseInt(request.getParameter("sl_aparelho"));
+        int alu =Integer.parseInt(request.getParameter("sl_aluno"));
+        int ins =Integer.parseInt(request.getParameter("sl_instrutor"));
+        String dia = request.getParameter("rb_dia");
 
-        Usuario usuario = new Usuario();
-        usuario.setId(id);
-        usuario.setLogin(login);
-        usuario.setSenha(senha);
-        usuario.setPermissao(permissao);
-        Treino tre = new Treino();
-       
+       Treino tre = new Treino();
+        tre.setDia(dia);
+        
+        Aluno aluno = new Aluno();
+        aluno.setId(alu);
+        Aparelho aparelho = new Aparelho();
+        aparelho.setId(apa);
+        Instrutor instrutor = new Instrutor();
+        instrutor.setId(ins);
+        
+        tre.setAluno(aluno);
+        tre.setAparelho(aparelho);
+        tre.setInstrutor(instrutor);
+        
         TreinoDao dao = new TreinoDao();
         dao.altera(tre);
         response.sendRedirect("Home.jsp");
 
     }
+
+               
 %>

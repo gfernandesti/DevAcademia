@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="tf_descricao">Descrição</label>  
                 <div class="col-md-6">
-                    <input id="tf_descricao" name="tf_descricao" type="text" placeholder="descrição.." class="form-control input-md" required="">
+                    <input id="tf_descricao" name="tf_descricao" type="text" placeholder="descrição.." value="<%=request.getParameter("tf_descricao")%>" class="form-control input-md" required="">
 
                 </div>
             </div>
