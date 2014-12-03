@@ -13,13 +13,15 @@ import java.util.ArrayList;
  * @author academia
  */
 public class Exercicio {
-    private ArrayList<Exercicio> exercicios = new ArrayList<>();
     private int id;
-    private String descricao [];
-    private int serie[];
-    private int repeticoes[];
-    private String grupomuscular[];
+    private String descricao;
+    private int serie;
+    private int repeticoes;
+    private String grupomuscular;
     private int treinoid;
+    private Aluno aluno;
+    private Aparelho aparelho;
+    private Instrutor instrutor;
     private Treino treino;
 
     public int getId() {
@@ -30,35 +32,35 @@ public class Exercicio {
         this.id = id;
     }
 
-    public String [] getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao []) {
+    public void setDescricao(String descricao ) {
         this.descricao = descricao;
     }
 
-    public int []getSerie() {
+    public int getSerie() {
         return serie;
     }
 
-    public void setSerie(int []serie) {
+    public void setSerie(int serie) {
         this.serie = serie;
     }
 
-    public int []getRepeticoes() {
+    public int getRepeticoes() {
         return repeticoes;
     }
 
-    public void setRepeticoes(int repeticoes[]) {
+    public void setRepeticoes(int repeticoes) {
         this.repeticoes = repeticoes;
     }
 
-    public String []getGrupomuscular() {
+    public String getGrupomuscular() {
         return grupomuscular;
     }
 
-    public void setGrupomuscular(String grupomuscular[]) {
+    public void setGrupomuscular(String grupomuscular) {
         this.grupomuscular = grupomuscular;
     }
 
@@ -78,17 +80,29 @@ public class Exercicio {
         this.treinoid = treinoid;
     }
 
-    public ArrayList<Exercicio> getExercicios() {
-        return exercicios;
+    public Aluno getAluno() {
+        return aluno;
     }
 
-    public void setExercicios(ArrayList<Exercicio> exercicios) {
-        this.exercicios = exercicios;
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
-    
 
-    
-    
+    public Aparelho getAparelho() {
+        return aparelho;
+    }
+
+    public void setAparelho(Aparelho aparelho) {
+        this.aparelho = aparelho;
+    }
+
+    public Instrutor getInstrutor() {
+        return instrutor;
+    }
+
+    public void setInstrutor(Instrutor instrutor) {
+        this.instrutor = instrutor;
+    }
     
     
 }

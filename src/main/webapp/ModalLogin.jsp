@@ -14,7 +14,7 @@
 					<h4 class="modal-title">Entrar com Login</h4>
 				</div>-->
 				<div class="modal-body">
-					<form class="form-horizontal" action="Home.jsp">
+                                    <form class="form-horizontal" action="Home.jsp" method="post">
 						<fieldset>
 
 							<!-- Button (Double) -->

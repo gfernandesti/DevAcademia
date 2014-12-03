@@ -7,6 +7,7 @@ package com.devacademia.dao;
 
 import com.devacademia.model.Aluno;
 import com.devacademia.model.Aparelho;
+import com.devacademia.model.Exercicio;
 import com.devacademia.model.Instrutor;
 import com.devacademia.model.Treino;
 import com.devacademia.util.FabricaDeConexoes;
@@ -36,9 +37,8 @@ public class TreinoDao {
 
     public void adiciona(Treino tre) {
         // comando sql
-        String sql = "insert into Treino"
-                + "(Aluno_alu_id,"
-                + "Aparelho_apa_id,Instrutor_inst_id,tre_dia)" + "values(?,?,?,?)";
+        String sql = "insert into Treino(Aluno_alu_id,Aparelho_apa_id,Instrutor_inst_id,tre_dia)"
+                + "values(?,?,?,?);SELECT @last := LAST_INSERT_ID();";
 
         PreparedStatement stmt;
         try {
@@ -52,7 +52,8 @@ public class TreinoDao {
             stmt.setString(8, tre.getDia());
             //stmt.setDate(9, new Date(tre.getHorario().getTimeInMillis()));
             stmt.execute();
-            stmt.close();
+            //stmt.close();
+           
            
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -68,7 +69,8 @@ public class TreinoDao {
             PreparedStatement stmt = this.conexao
                     .prepareStatement("select * from Treino join Aluno on (Aluno_alu_id= alu_id)"
                             + "join Aparelho on (Aparelho_apa_id= apa_id)"
-                            + "join Instrutor on (Instrutor_inst_id= inst_id);");
+                            + "join Instrutor on (Instrutor_inst_id= inst_id)"
+                            + "join Exercicio on (Exercicio_exe_id=exe_id);");
             //objeto resultset consegue guardar valor encontrado
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -90,9 +92,16 @@ public class TreinoDao {
                 Instrutor instrutor = new Instrutor();
                 instrutor.setNome(rs.getString("inst_nome"));
                 
+                Exercicio exercicio = new Exercicio();
+                exercicio.setDescricao(rs.getString("exe_descricao"));
+                exercicio.setGrupomuscular(rs.getString("exe_grupomuscular"));
+                exercicio.setSerie(rs.getInt("exe_serie"));
+                exercicio.setRepeticoes(rs.getInt("exe_repeticoes"));
+                
                 tre.setAluno(aluno);
                 tre.setAparelho(aparelho);
                 tre.setInstrutor(instrutor);
+                tre.setExercicio(exercicio);
                 listadetreinos.add(tre);
             }
             rs.close();

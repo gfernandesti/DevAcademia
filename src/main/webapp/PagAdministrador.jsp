@@ -14,7 +14,7 @@
             if(request.getParameter("logoff") != null) {
             session.removeAttribute("userName");
             session.removeAttribute("userPass");
-            response.sendRedirect("Home.jsp");
+            response.sendRedirect("PagAdministrador.jsp?acao=adm");
         }
             %>
         <div class="container">
@@ -22,7 +22,12 @@
                 <%@include file="CabecalhoAdministrador.jsp" %>
                 
                 <div id="paginasdecadastro">
+                    <%if(request.getParameter("acao").equals("treino")){%>
+                        <%@include file="CRUDViewCadTreino.jsp" %>
+                   <% }else {%>
+                   
                     <%@include file="CRUDViewCadAdministrador.jsp" %>
+                    <%}%>
                 </div>
             </div>
 

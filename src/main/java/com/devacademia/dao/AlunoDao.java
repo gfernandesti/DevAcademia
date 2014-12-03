@@ -131,7 +131,7 @@ public class AlunoDao {
             stmt.close();
             
             String sql2 = "update Aluno set alu_telefone=?,alu_email=?,alu_nome=?,alu_registro=?,alu_idade=?"
-                + "where Usuario_usu_id=?";
+                + " where Usuario_usu_id=?";
             PreparedStatement stmt2;
 
             stmt2 = conexao.prepareStatement(sql2);

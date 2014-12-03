@@ -53,9 +53,9 @@
 <tr>
 <td><%=id%></td>
 <td><%=codigo%></td>
-<td><%=quantidade%></td>
 <td><%=descricao%></td>
 <td><%=nf%></td>
+<td><%=quantidade%></td>
 
 <td><a href="ControllerAparelho.jsp?acao=remover&id=<%=id%>&codigo=<%=codigo%>&quantidade=<%=quantidade%>&descricao=<%=descricao%>&nf=<%=nf%>&acao=remover" class=" btn btn-danger">Remover</a></td>
 <td><a href="FormAprEdit.jsp?tf_id=<%=id%>&tf_codigo=<%=codigo%>&tf_quantidade=<%=quantidade%>&tf_descricao=<%=descricao%>&tf_nf=<%=nf%>" class=" btn btn-info">Alterar</a></td>

@@ -34,7 +34,7 @@
        
         response.sendRedirect("Home.jsp");
     } else if (request.getParameter("acao").equals("alterar")) {
-        
+        int id = Integer.parseInt(request.getParameter("tf_id"));
         int codigo = Integer.parseInt(request.getParameter("tf_codigo"));
         int quantidade = Integer.parseInt(request.getParameter("tf_quantidade"));
         String descricao = request.getParameter("tf_descricao");
@@ -45,6 +45,7 @@
         apr.setDescricao(descricao);
         apr.setNotafiscal(nf);
         apr.setQuantidade(quantidade);
+        apr.setId(id);
         
         AparelhoDao dao = new AparelhoDao();
         dao.altera(apr);

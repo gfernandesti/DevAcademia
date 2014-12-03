@@ -19,36 +19,8 @@
     <%@include file="CabecalhoAdministrador.jsp" %>
 
     <form class="form-horizontal" action="ControllerTreino.jsp">
-        <fieldset>
-
             <!-- Form Name -->
-            <legend>Cadastrar Treino!</legend>
-
-            <!-- Text input-->
-            <!--<div class="form-group">
-                <label class="col-md-4 control-label" for="tf_descricao">Descrição</label>  
-                <div class="col-md-6">
-                    <input id="tf_descricao" name="tf_descricao" type="text" placeholder="descrição.." class="form-control input-md" required="">
-
-                </div>
-            </div>-->
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="sl_aparelho">Aparelho</label>
-                <div class="col-md-5">
-                    <select id="sl_aparelho" name="sl_aparelho" class="form-control">
-                        <%AparelhoDao apa = new AparelhoDao();
-                            List<Aparelho> lista = apa.getLista();
-                            for (Aparelho aparelho : lista) {
-                        %>
-
-                        <option value="<%=aparelho.getId()%>"><%=aparelho.getDescricao()%></option>
-                        <%}%>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Select Basic -->
+            <h2>Cadastrar Treino!</h2>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="sl_aluno">Aluno</label>
                 <div class="col-md-5">
@@ -73,6 +45,22 @@
                             for (Instrutor instrutor : lista3) {
                         %>
                         <option value="<%=instrutor.getId()%>"><%= instrutor.getNome()%></option>
+                        <%}%>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="sl_aparelho">Aparelho</label>
+                <div class="col-md-5">
+                    <select id="sl_aparelho" name="sl_aparelho" class="form-control">
+                        <%AparelhoDao apa = new AparelhoDao();
+                            List<Aparelho> lista = apa.getLista();
+                            for (Aparelho aparelho : lista) {
+                        %>
+
+                        <option value="<%=aparelho.getId()%>"><%=aparelho.getDescricao()%></option>
                         <%}%>
                     </select>
                 </div>
@@ -177,7 +165,7 @@
                 <label class="col-md-4 control-label" for="bt_enviar"></label>
                 <div class="col-md-4">
                     <button id="bt_add" name="acao" class="btn btn-primary" value="adicionar">SalvarTreino</button>
-                    <a href="Home.jsp" id="bt_add" name="cancel" class="btn btn-primary"  >Cancelar</a>
+                    <a href="PagAdministrador.jsp?acao=treino" id="bt_add" name="cancel" class="btn btn-primary"  >Cancelar</a>
                 </div>
             </div>
 

@@ -129,7 +129,7 @@
 
                 if ("M".equals(session.getAttribute("userPermissao").toString())) {
                     RequestDispatcher rd = request
-                            .getRequestDispatcher("PagAdministrador.jsp");
+                            .getRequestDispatcher("PagAdministrador.jsp?acao=adm");
                     rd.forward(request, response);
                 } else if ("A".equals(session.getAttribute("userPermissao").toString())) {
                     RequestDispatcher rd = request

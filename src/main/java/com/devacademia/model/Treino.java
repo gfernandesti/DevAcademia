@@ -15,6 +15,7 @@ public class Treino {
     private Aluno aluno;
     private Aparelho aparelho;
     private Instrutor instrutor;
+    private Exercicio exercicio;
     private String dia;
 
 
@@ -57,6 +58,15 @@ public class Treino {
     public void setDia(String dia) {
         this.dia = dia;
     }
+
+    public Exercicio getExercicio() {
+        return exercicio;
+    }
+
+    public void setExercicio(Exercicio exercicio) {
+        this.exercicio = exercicio;
+    }
+    
 
 
     
